@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+ 
+<p>
+  <strong>Longitude:</strong>
+  <%= @place.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @place.latitude %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>
