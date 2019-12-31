@@ -1,3 +1,4 @@
+<% selected_places = get_places %>
 <%= form_with(model: trip, local: true) do |f| %>
   <% if trip.errors.any? %>
     <div id="error_explanation">
@@ -12,28 +13,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Driver %><br />
+    <%= f.label :Driver %><br/>
     <%= f.text_field :driver_id, autofocus: true, autocomplete: "driver_id" %>
   </div>
 
   <div class="field">
     <%= f.label :Source %><br />
-    <%= f.text_field :source_id, autofocus: true, autocomplete: "source_id" %>
+    <%= f.select(:source_id, options_for_select(selected_places, @trip&.source_id), {include_blank: true}, {class: "select2 col-sm-4"}) %>
   </div>
 
   <div class="field">
     <%= f.label :Destination %><br />
-    <%= f.text_field :destination_id, autofocus: true, autocomplete: "destination_id" %>
+    <%= f.select(:destination_id, options_for_select(selected_places, @trip&.destination_id), {include_blank: true}, {class: "select2 col-sm-4"}) %>
   </div>
 
   <div class="field">
     <%= f.label :Departure_time %><br />
-    <%= f.text_field :departure_time, autofocus: true, autocomplete: "departure_time" %>
+    <%= f.number_field :departure_time, autofocus: true, autocomplete: "departure_time" %>
   </div>
 
   <div class="field">
     <%= f.label :No_of_seats %><br />
-    <%= f.text_field :no_of_seats, autofocus: true, autocomplete: "no_of_seats" %>
+    <%= f.number_field :no_of_seats, autofocus: true, autocomplete: "no_of_seats" %>
   </div>
 
   <div class="actions">

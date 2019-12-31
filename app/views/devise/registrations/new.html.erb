@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.text_field :role, autofocus: true, autocomplete: "role" %>
+    <%= f.select :role, User.role.options, {include_blank: true}, {class: "select2 form-control", required: true} %>
   </div>
 
   <div class="field">

@@ -17,12 +17,14 @@
 
   <div class="field">
     <%= f.label :longitude %><br />
-    <%= f.text_field :longitude, autofocus: true, autocomplete: "longitude" %>
+    <a class="btn" href="#" id="location-picker"></a>
+    <%= f.number_field :longitude, id: 'longitude', class: "inline-control", within: -91...91, step: 'any', required: true %>
   </div>
 
   <div class="field">
     <%= f.label :latitude %><br />
-    <%= f.text_field :latitude, autofocus: true, autocomplete: "latitude" %>
+    <a class="btn" href="#" id="location-picker"></a>
+    <%= f.number_field :latitude, id: 'latitude', class: "inline-control", within: -91...91, step: 'any', required: true %>
   </div>
 
   <div class="actions">
